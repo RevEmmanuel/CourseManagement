@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82242fb6-e290-4758-8065-34c7b21ad8b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/controller/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/controller/TopicController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/data/models/Topic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/services/TopicService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/services/TopicServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/controller/TopicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/controller/TopicController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +49,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -94,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1673006972136</updated>
       <workItem from="1673006974053" duration="5286000" />
-      <workItem from="1673093486633" duration="11295000" />
+      <workItem from="1673093486633" duration="14322000" />
     </task>
     <servers />
   </component>
