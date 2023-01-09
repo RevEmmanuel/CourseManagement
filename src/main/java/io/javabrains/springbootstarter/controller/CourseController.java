@@ -1,6 +1,7 @@
 package io.javabrains.springbootstarter.controller;
 
 import io.javabrains.springbootstarter.data.models.Course;
+import io.javabrains.springbootstarter.data.models.Topic;
 import io.javabrains.springbootstarter.services.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +14,7 @@ public class CourseController {
     private CourseService courseService;
 
     @GetMapping("/courses")
-    public List<Course> getCourse() {
+    public List<Course> getAllCourses() {
         return courseService.getCourses();
     }
 

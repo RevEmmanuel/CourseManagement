@@ -13,7 +13,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Topic {
 
     @Id
-    private String id;
+    private String topicId;
+    private String courseId;
     private String name;
     private String description;
 }
