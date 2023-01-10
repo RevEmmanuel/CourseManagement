@@ -1,8 +1,8 @@
 package io.javabrains.springbootstarter.services;
 
 import io.javabrains.springbootstarter.data.models.Course;
-import io.javabrains.springbootstarter.data.models.Topic;
 import io.javabrains.springbootstarter.data.repository.CourseRepository;
+import io.javabrains.springbootstarter.dtos.requests.CreateCourseRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -26,32 +26,44 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public void addCourse(Course course) {
-        if(checkCourseExists(course.getId())) updateCourse(course);
-        else createNewCourse(course);
+    public void addCourse(CreateCourseRequest courseRequest) {
+        if(checkCourseExists(courseRequest.getCourseId())) innerUpdateCourse(courseRequest);
+        else createNewCourse(courseRequest);
     }
 
     @Override
     public void deleteCourse(String id) {
-        if (checkCourseExists(id)) courseRepository.deleteById(id);
+        if (checkCourseExists(id)) courseRepository.deleteCourseByCourseId(id);
     }
 
-    private void createNewCourse(Course course) {
-        courseRepository.save(course);
+    private void createNewCourse(CreateCourseRequest courseRequest) {
+        Course newCourse = new Course();
+        newCourse.setCourseId(courseRequest.getCourseId());
+        newCourse.setName(courseRequest.getName());
+        newCourse.setDescription(courseRequest.getDescription());
+        courseRepository.save(newCourse);
     }
 
-    private void updateCourse(Course course) {
-        Course foundCourse = checkForCourse(course.getId()).get();
+    public void updateCourse(Course course) {
+        Course foundCourse = checkForCourse(course.getCourseId()).get();
         foundCourse.setName(course.getName());
         foundCourse.setDescription(course.getDescription());
+        foundCourse.setTopicsList(course.getTopicsList());
+        courseRepository.save(foundCourse);
+    }
+
+    private void innerUpdateCourse(CreateCourseRequest courseRequest) {
+        Course foundCourse = checkForCourse(courseRequest.getCourseId()).get();
+        foundCourse.setName(courseRequest.getName());
+        foundCourse.setDescription(courseRequest.getDescription());
         courseRepository.save(foundCourse);
     }
 
     private Optional<Course> checkForCourse(String id) {
-        return courseRepository.findById(id);
+        return courseRepository.findCourseByCourseId(id);
     }
 
     private boolean checkCourseExists(String id) {
-        return courseRepository.findById(id).isPresent();
+        return courseRepository.findCourseByCourseId(id).isPresent();
     }
 }

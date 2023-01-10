@@ -1,8 +1,10 @@
 package io.javabrains.springbootstarter.services;
 
 
+import io.javabrains.springbootstarter.data.models.Course;
 import io.javabrains.springbootstarter.data.models.Topic;
 import io.javabrains.springbootstarter.data.repository.TopicRepository;
+import io.javabrains.springbootstarter.dtos.requests.CreateTopicRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -23,32 +25,48 @@ public class TopicServiceImpl implements TopicService {
     }
 
     @Override
-    public void addTopic(Topic topic) {
-        if (checkTopicExists(topic.getTopicId()))  updateTopic(topic);
-        else  createNewTopic(topic);
+    public void addTopic(CreateTopicRequest topicRequest) {
+        if (checkTopicExists(topicRequest.getTopicId()))  updateTopic(topicRequest);
+        else  createNewTopic(topicRequest);
     }
 
-    private void createNewTopic(Topic topic) {
-        courseService.findCourse(topic.getCourseId()).getTopicsList().add(topic);
-        topicRepository.save(topic);
+    private void createNewTopic(CreateTopicRequest topicRequest) {
+        Course course = courseService.findCourse(topicRequest.getCourseId());
+        Topic topic = new Topic();
+        topic.setTopicId(topicRequest.getTopicId());
+        topic.setDescription(topicRequest.getDescription());
+        topic.setName(topicRequest.getName());
+        topic.setCourseId(topicRequest.getCourseId());
+        Topic savedTopic = topicRepository.save(topic);
+        course.getTopicsList().add(savedTopic);
+        courseService.updateCourse(course);
     }
 
-    private void updateTopic(Topic topic) {
-        Topic foundTopic = topicRepository.findById(topic.getTopicId()).get();
-        foundTopic.setName(topic.getName());
-        foundTopic.setDescription(topic.getDescription());
-        foundTopic.setCourseId(topic.getCourseId());
+    private void updateTopic(CreateTopicRequest topicRequest) {
+        Topic foundTopic = topicRepository.findTopicByTopicId(topicRequest.getTopicId()).get();
+        Course course = courseService.findCourse(foundTopic.getCourseId());
+        course.getTopicsList().remove(foundTopic);
+        foundTopic.setName(topicRequest.getName());
+        foundTopic.setDescription(topicRequest.getDescription());
+        foundTopic.setCourseId(topicRequest.getCourseId());
+
+        course.getTopicsList().add(foundTopic);
+        courseService.updateCourse(course);
         topicRepository.save(foundTopic);
     }
 
     @Override
-    public void deleteTopic(String id) {
-        topicRepository.deleteById(id);
+    public void deleteTopic(String courseId,String topicId) {
+        Topic foundTopic = topicRepository.findTopicByTopicId(topicId).get();
+        Course course = courseService.findCourse(foundTopic.getCourseId());
+        course.getTopicsList().remove(foundTopic);
+        courseService.updateCourse(course);
+        topicRepository.deleteTopicByTopicId(topicId);
     }
 
     @Override
     public Topic findTopic(String courseId, String topicId) {
-        Optional<Topic> foundTopic = topicRepository.findById(topicId);
+        Optional<Topic> foundTopic = topicRepository.findTopicByTopicId(topicId);
         if (checkTopicExists(topicId)) {
             return (foundTopic.get().getCourseId().equals(courseId) ? foundTopic.get() : null);
         }
@@ -61,10 +79,10 @@ public class TopicServiceImpl implements TopicService {
     }
 
     private String getCourseId(String id) {
-        return topicRepository.findById(id).get().getCourseId();
+        return topicRepository.findTopicByTopicId(id).get().getCourseId();
     }
 
     private boolean checkTopicExists(String topicId) {
-        return topicRepository.findById(topicId).isPresent();
+        return topicRepository.findTopicByTopicId(topicId).isPresent();
     }
 }

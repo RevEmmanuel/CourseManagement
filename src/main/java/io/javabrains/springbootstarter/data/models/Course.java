@@ -15,7 +15,8 @@ public class Course {
 
     @Id
     private String id;
+    private String courseId;
     private String name;
     private String description;
-    private List<Topic> topicsList;
+    private List<Topic> topicsList = new ArrayList<>();
 }

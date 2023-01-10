@@ -1,6 +1,7 @@
 package io.javabrains.springbootstarter.controller;
 
 import io.javabrains.springbootstarter.data.models.Topic;
+import io.javabrains.springbootstarter.dtos.requests.CreateTopicRequest;
 import io.javabrains.springbootstarter.services.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,14 +23,14 @@ public class TopicController {
         return topicService.findTopic(courseId, topicId);
     }
 
-    @PostMapping("/courses/{courseId}/topics")
-    public void addTopic(@RequestBody Topic topic, @PathVariable String courseId) {
-        topic.setCourseId(courseId);
-        topicService.addTopic(topic);
+    @PostMapping("/courses/courseId/topics")
+    public void addTopic(@RequestBody CreateTopicRequest topicRequest) {
+        topicService.addTopic(topicRequest);
     }
 
     @DeleteMapping("/courses/{courseId}/topics/{topicId}")
-    public void deleteTopic(@PathVariable String courseId, @PathVariable String topicId) {
-        topicService.deleteTopic(topicId);
+    public void deleteTopic(@PathVariable String topicId, @PathVariable String courseId) {
+        topicService.deleteTopic(courseId, topicId);
     }
+
 }

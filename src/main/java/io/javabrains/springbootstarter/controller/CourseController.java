@@ -1,7 +1,7 @@
 package io.javabrains.springbootstarter.controller;
 
 import io.javabrains.springbootstarter.data.models.Course;
-import io.javabrains.springbootstarter.data.models.Topic;
+import io.javabrains.springbootstarter.dtos.requests.CreateCourseRequest;
 import io.javabrains.springbootstarter.services.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +24,8 @@ public class CourseController {
     }
 
     @PostMapping("/courses")
-    public void addCourse(@RequestBody Course course) {
-        courseService.addCourse(course);
+    public void addCourse(@RequestBody CreateCourseRequest courseRequest) {
+        courseService.addCourse(courseRequest);
     }
 
     @DeleteMapping("/courses/{id}")
