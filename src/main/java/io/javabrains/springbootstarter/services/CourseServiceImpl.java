@@ -52,6 +52,11 @@ public class CourseServiceImpl implements CourseService {
         courseRepository.save(foundCourse);
     }
 
+    @Override
+    public void deleteAll() {
+        courseRepository.deleteAll();
+    }
+
     private void innerUpdateCourse(CreateCourseRequest courseRequest) {
         Course foundCourse = checkForCourse(courseRequest.getCourseId()).get();
         foundCourse.setName(courseRequest.getName());

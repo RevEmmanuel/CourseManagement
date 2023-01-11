@@ -5,19 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82242fb6-e290-4758-8065-34c7b21ad8b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/dtos/requests/CreateCourseRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/dtos/requests/CreateTopicRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/io/javabrains/springbootstarter/services/CourseServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/controller/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/controller/TopicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/controller/TopicController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/data/models/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/data/models/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/data/models/Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/data/models/Topic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/data/repository/CourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/data/repository/CourseRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/data/repository/TopicRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/data/repository/TopicRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/services/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/services/CourseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/services/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/services/CourseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/services/TopicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/services/TopicService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/services/TopicServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javabrains/springbootstarter/services/TopicServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +23,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -56,6 +51,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -73,7 +70,62 @@
     ]
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="io.javabrains.springbootstarter.services" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CourseServiceImplTest">
+    <configuration name="CourseServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CourseManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.javabrains.springbootstarter.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.javabrains.springbootstarter.services" />
+      <option name="MAIN_CLASS_NAME" value="io.javabrains.springbootstarter.services.CourseServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CourseServiceImplTest.addCourse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CourseManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.javabrains.springbootstarter.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.javabrains.springbootstarter.services" />
+      <option name="MAIN_CLASS_NAME" value="io.javabrains.springbootstarter.services.CourseServiceImplTest" />
+      <option name="METHOD_NAME" value="addCourse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CourseServiceImplTest.updateCourse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CourseManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.javabrains.springbootstarter.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.javabrains.springbootstarter.services" />
+      <option name="MAIN_CLASS_NAME" value="io.javabrains.springbootstarter.services.CourseServiceImplTest" />
+      <option name="METHOD_NAME" value="updateCourse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="CourseManagement" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="io.javabrains.springbootstarter.Main" />
@@ -89,6 +141,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CourseServiceImplTest" />
+        <item itemvalue="JUnit.CourseServiceImplTest.updateCourse" />
+        <item itemvalue="JUnit.CourseServiceImplTest.addCourse" />
         <item itemvalue="Spring Boot.Main" />
       </list>
     </recent_temporary>
@@ -105,7 +160,7 @@
       <workItem from="1673093486633" duration="18831000" />
       <workItem from="1673184372627" duration="166000" />
       <workItem from="1673262801805" duration="630000" />
-      <workItem from="1673271308151" duration="20368000" />
+      <workItem from="1673271308151" duration="26012000" />
     </task>
     <servers />
   </component>
