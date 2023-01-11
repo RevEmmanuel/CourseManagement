@@ -44,7 +44,7 @@ public class CourseServiceImpl implements CourseService {
         courseRepository.save(newCourse);
     }
 
-    public void updateCourse(Course course) {
+    public void addCourse(Course course) {
         Course foundCourse = checkForCourse(course.getCourseId()).get();
         foundCourse.setName(course.getName());
         foundCourse.setDescription(course.getDescription());

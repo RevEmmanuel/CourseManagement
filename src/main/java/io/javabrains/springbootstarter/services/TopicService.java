@@ -15,5 +15,5 @@ public interface TopicService {
 
     Topic findTopic(String courseId, String topicId);
 
-    String getBelongingCourseId(Topic topic);
+    void deleteAll();
 }

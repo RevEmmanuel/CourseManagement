@@ -21,7 +21,18 @@ class CourseServiceImplTest {
     }
 
     @Test
-    void findCourse() {
+    void addCourseTest() {
+        CreateCourseRequest courseRequest = new CreateCourseRequest();
+        courseRequest.setCourseId("FSC 112");
+        courseRequest.setName("Physics");
+        courseRequest.setDescription("Required by all science and engineering students");
+        courseService.addCourse(courseRequest);
+
+        assertEquals(1, courseService.getCourses().size());
+    }
+
+    @Test
+    void findCourseTest() {
         CreateCourseRequest courseRequest = new CreateCourseRequest();
         courseRequest.setCourseId("FSC 112");
         courseRequest.setName("Physics");
@@ -35,18 +46,7 @@ class CourseServiceImplTest {
     }
 
     @Test
-    void addCourse() {
-        CreateCourseRequest courseRequest = new CreateCourseRequest();
-        courseRequest.setCourseId("FSC 112");
-        courseRequest.setName("Physics");
-        courseRequest.setDescription("Required by all science and engineering students");
-        courseService.addCourse(courseRequest);
-
-        assertEquals(1, courseService.getCourses().size());
-    }
-
-    @Test
-    void deleteCourse() {
+    void deleteCourseTest() {
         CreateCourseRequest courseRequest = new CreateCourseRequest();
         courseRequest.setCourseId("FSC 112");
         courseRequest.setName("Physics");
@@ -60,7 +60,7 @@ class CourseServiceImplTest {
     }
 
     @Test
-    void updateCourse() {
+    void updateCourseTest() {
         CreateCourseRequest courseRequest = new CreateCourseRequest();
         courseRequest.setCourseId("FSC 112");
         courseRequest.setName("Physics");

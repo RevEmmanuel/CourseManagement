@@ -39,7 +39,7 @@ public class TopicServiceImpl implements TopicService {
         topic.setCourseId(topicRequest.getCourseId());
         Topic savedTopic = topicRepository.save(topic);
         course.getTopicsList().add(savedTopic);
-        courseService.updateCourse(course);
+        courseService.addCourse(course);
     }
 
     private void updateTopic(CreateTopicRequest topicRequest) {
@@ -51,7 +51,7 @@ public class TopicServiceImpl implements TopicService {
         foundTopic.setCourseId(topicRequest.getCourseId());
 
         course.getTopicsList().add(foundTopic);
-        courseService.updateCourse(course);
+        courseService.addCourse(course);
         topicRepository.save(foundTopic);
     }
 
@@ -60,7 +60,7 @@ public class TopicServiceImpl implements TopicService {
         Topic foundTopic = topicRepository.findTopicByTopicId(topicId).get();
         Course course = courseService.findCourse(foundTopic.getCourseId());
         course.getTopicsList().remove(foundTopic);
-        courseService.updateCourse(course);
+        courseService.addCourse(course);
         topicRepository.deleteTopicByTopicId(topicId);
     }
 
@@ -74,8 +74,8 @@ public class TopicServiceImpl implements TopicService {
     }
 
     @Override
-    public String getBelongingCourseId(Topic topic) {
-        return (checkTopicExists(topic.getTopicId()) ? getCourseId(topic.getTopicId()) : "Topic not found");
+    public void deleteAll() {
+        topicRepository.deleteAll();
     }
 
     private String getCourseId(String id) {
