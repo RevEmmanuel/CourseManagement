@@ -15,5 +15,5 @@ git clone https://github.com/RevEmmanuel/CourseManagement.git
 Adeola Adekunle
 * [GitHub (RevEmmanuel)](https://github.com/RevEmmanuel)
 * [Twitter (@Adeola_Ade1)](https://twitter.com/Adeola_Ade1)
-* [Instagram (@deolaaxo)]()
+* [Instagram (@deolaaxo)](https://www.instagram.com/deolaaxo/)
 * [LinkedIn (Adeola Adekunle)](https://www.linkedin.com/in/adeola-adekunle-065942258)
